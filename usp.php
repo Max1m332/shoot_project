@@ -4,6 +4,25 @@
         
       public $silencerState = false;  
       
+      function __construct($type, $damage) {
+        $this->type = $type;
+        $this->damage = $damage;
+        
+      }
+      
+      function reload(Magazine $magazine) {
+        if ($this->type == $magazine->type) {
+        $this->magazine = $magazine;
+        return true;
+        } else {
+          echo "неподходящий тип патронов";
+          return false;
+          }
+      }
+      
+      
+      
+      
       function switchSilencer() 
       {
        $this->silencerState = !$this->silencerState;
@@ -13,9 +32,11 @@
                 echo 'надел глушитель<br />';
               }
           }
-        function singleShot() {
-            if($magazine->quantity >= 1) {
-                $magazine->quantity -= 1;
+        
+        
+      function singleShot() {
+            if($this->magazine->quantity >= 1) {  
+                $this->magazine->quantity -= 1;
                 if($this->silencerState === false) {
                 echo 'бух<br />';
                 } else {
@@ -24,3 +45,7 @@
               }
             }
           }
+      
+    
+      
+      

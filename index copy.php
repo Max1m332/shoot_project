@@ -22,7 +22,7 @@
  
  
  
- class usp  {
+ class Usp extends Weapon {
    
   public $magazine = 12;
   public $silencerState = false;
@@ -49,14 +49,3 @@
     echo $this->magazine;
   }
 }
-
-$usp = new usp();
-$usp -> shoot();
-$usp -> switchSilencer();
-$usp -> shoot();
-$usp -> switchSilencer();
-$usp -> shoot();
-echo '<br />';
-echo $usp -> $magazine;
-$usp -> check_magazine();
-$usp->lohgalimi();

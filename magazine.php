@@ -16,7 +16,7 @@ class Magazine {
             $this->max_quantity = $max_quantity;
         }
         
-        
+    
         
         function refill(Bullet $bullet, $bullet_quantity)
         {
